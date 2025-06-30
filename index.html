@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenido a la Enciclopedia</title>
+  <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Bienvenido a la Enciclopedia de Luchadores</h1>
+    <p>Explora la historia de tus luchadores favoritos</p>
+    <button id="startBtn">Iniciar</button>
+    <div class="progress-container" id="progressContainer">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </div>
+
+  <!-- 🎧 Audio oculto que se reproduce durante la carga -->
+  <audio id="inicioAudio" src="wwd.mp3juice.blog - La Sonora Santanera - Los Luchadores (Live) (320 KBps).mp3" preload="auto"></audio>
+
+  <script>
+    document.getElementById("startBtn").addEventListener("click", function () {
+      const progressContainer = document.getElementById("progressContainer");
+      const progressBar = document.getElementById("progressBar");
+      const audio = document.getElementById("inicioAudio");
+
+      // Mostrar barra de progreso
+      progressContainer.style.display = "block";
+
+      // Reproducir audio
+      audio.currentTime = 0; // Reinicia el audio en caso de que se haya reproducido antes
+      audio.play().catch(err => console.log("Error al reproducir audio:", err));
+
+      let width = 0;
+      const interval = setInterval(() => {
+        if (width >= 100) {
+          clearInterval(interval);
+          audio.pause(); // Detener el audio cuando termine la carga
+          window.location.href = "menu inicio.html";
+        } else {
+          width++;
+          progressBar.style.width = width + "%";
+        }
+      }, 250); // Esto hace que tarde 2 segundos (100 * 20ms)
+    });
+  </script>
+</body>
+</html>

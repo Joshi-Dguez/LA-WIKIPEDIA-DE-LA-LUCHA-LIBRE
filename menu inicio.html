@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enciclopedia de Luchadores</title>
+  <link rel="stylesheet" href="Style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #8b0000;
+      margin-bottom: 20px;
+    }
+
+    form {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-left: 5px;
+      font-size: 1em;
+      background-color: #8b0000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #a60000;
+    }
+
+    @media (max-width: 500px) {
+      input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      button {
+        width: 100%;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Enciclopedia de Luchadores</h1>
+
+  <form id="busquedaForm">
+    <input list="luchadores" type="text" id="buscador" placeholder="Buscar luchador..." autocomplete="off" />
+    <datalist id="luchadores">
+  <option value="mistico">
+  <option value="el santo">
+  <option value="blue demon">
+  <option value="mil mascaras">
+  <option value="octagon">
+  <option value="super fly">
+  <option value="la parka">
+  <option value="psycho clown">
+  <option value="texano jr">
+  <option value="dr wagner jr">
+  <option value="pentagon jr">
+  <option value="tinieblas">
+  <option value="alushe">
+  <option value="rey mysterio jr">
+  <option value="pagano">
+  <option value="el perro aguayo">
+  <option value="antonio peña">
+  <option value="latin lover">
+</datalist>
+
+<script>
+  document.getElementById("busquedaForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    let nombre = document.getElementById("buscador").value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+
+    switch (nombre) {
+      case "mistico":
+        window.location.href = "mistico.html";
+        break;
+      case "el santo":
+        window.location.href = "el-santo.html";
+        break;
+      case "blue demon":
+        window.location.href = "blue-demon.html";
+        break;
+      case "mil mascaras":
+        window.location.href = "mil-mascaras.html";
+        break;
+      case "octagon":
+        window.location.href = "octagon.html";
+        break;
+      case "super fly":
+        window.location.href = "super-fly.html";
+        break;
+      case "la parka":
+        window.location.href = "la-parka.html";
+        break;
+      case "psycho clown":
+      case "psycho":
+        window.location.href = "psycho-clown.html";
+        break;
+      case "texano jr":
+        window.location.href = "texano-jr.html";
+        break;
+      case "dr wagner":
+      case "dr wagner jr":
+        window.location.href = "dr-wagner-jr.html";
+        break;
+      case "pentagon":
+      case "pentagon jr":
+        window.location.href = "pentagon-jr.html";
+        break;
+      case "tinieblas":
+        window.location.href = "tinieblas.html";
+        break;
+      case "alushe":
+        window.location.href = "alushe.html";
+        break;
+      case "rey mysterio":
+      case "rey mysterio jr":
+        window.location.href = "rey misterio.html";
+        break;
+      case "pagano":
+        window.location.href = "pagano.html";
+        break;
+      case "el perro aguayo":
+      case "perro aguayo":
+        window.location.href = "perro aguayo.html";
+        break;
+      case "antonio peña":
+        window.location.href = "toño.html";
+        break;
+      case "latin lover":
+        window.location.href = "latin lover.html";
+        break;
+      default:
+        alert("Luchador no encontrado. Intenta con otro nombre.");
+    }
+  });
+</script>
+
+<h1>Galería de Luchadores</h1>
+
+  <div class="galeria">
+
+    <div class="card">
+  <img src="imagenes/antonio-pena.jpg" alt="Antonio Peña" />
+  <h3>Antonio Peña</h3>
+  <button onclick="location.href='toño.html'">Ver biografía</button>
+</div>
+
+    <div class="card">
+      <img src="imagenes/mistico.jpg" alt="Místico" />
+      <h3>Místico</h3>
+      <button onclick="location.href='mistico.html'">Ver biografía</button>
+    </div>
+
+    <div class="card">
+      <img src="imagenes/el-santo.jpg" alt="El Santo" />
+      <h3>El Santo</h3>
+      <button onclick="location.href='el-santo.html'">Ver biografía</button>
+    </div>
+
+    <div class="card">
+      <img src="imagenes/blue-demon.jpg" alt="Blue Demon" />
+      <h3>Blue Demon</h3>
+      <button onclick="location.href='blue-demon.html'">Ver biografía</button>
+    </div>
+
+    <div class="card">
+  <img src="imagenes/mil-mascaras.jpg" alt="Mil Máscaras" />
+  <h3>Mil Máscaras</h3>
+  <button onclick="location.href='mil-mascaras.html'">Ver biografía</button>
+</div>
+
+<div class="card">
+  <img src="imagenes/octagon.jpg" alt="Octagón" />
+  <h3>Octagón</h3>
+  <button onclick="location.href='octagon.html'">Ver biografía</button>
+</div>
+
+<div class="card">
+  <img src="imagenes/la-parka.jpg" alt="La Parka" />
+  <h3>La Parka</h3>
+  <button onclick="location.href='la-parka.html'">Ver biografía</button>
+</div>
+
+<div class="card">
+  <img src="imagenes/psycho-clown.jpg" alt="Psycho Clown" />
+  <h3>Psycho Clown</h3>
+  <button onclick="location.href='psycho-clown.html'">Ver biografía</button>
+</div>
+
+<div class="card">
+  <img src="imagenes/dr-wagner-jr.jpg" alt="Dr. Wagner Jr." />
+  <h3>Dr. Wagner Jr.</h3>
+  <button onclick="location.href='dr-wagner-jr.html'">Ver biografía</button>
+</div>
+
+<div class="card">
+  <img src="imagenes/hijo-del-fantasma.jpg" alt="El Hijo del Fantasma" />
+  <h3>El Hijo del Fantasma</h3>
+  <button onclick="location.href='hijo-del-fantasma.html'">Ver biografía</button>
+</div>
+
+<div class="card">
+  <img src="imagenes/texano-jr.jpg" alt="Texano Jr." />
+  <h3>Texano Jr.</h3>
+  <button onclick="location.href='texano-jr.html'">Ver biografía</button>
+</div>
+
+<div class="card">
+  <img src="imagenes/pentagon-jr.jpg" alt="Pentagon Jr." />
+  <h3>Pentagon Jr.</h3>
+  <button onclick="location.href='pentagon-jr.html'">Ver biografía</button>
+</div>
+
+<div class="card">
+  <img src="imagenes/super-fly.jpg" alt="Super Fly" />
+  <h3>Super Fly</h3>
+  <button onclick="location.href='super-fly.html'">Ver biografía</button>
+</div>
+
+  </div>
+
+</body>
+</html>
